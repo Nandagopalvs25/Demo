@@ -104,12 +104,12 @@ class FindMatch(APIView):
       generation_config = {
             "temperature": 1,
             "top_p": 0.95,
-            "top_k": 64,
+            "top_k": 40,
             "max_output_tokens": 8192,
             "response_mime_type": "application/json",
            }
       model = genai.GenerativeModel(
-            model_name="gemini-1.5-flash",
+            model_name="gemini-1.5-flash-002",
             system_instruction="Analyze the user profile labelled as userprofile, you will be given a list of other peoples profiles labelled as candidates_data, from that list pick a person who has the most opposite personality of the userprofile candidate. Output Just their name,age and id with labels name,age and id",
             generation_config=generation_config,
         )
@@ -143,13 +143,13 @@ class AiChatWindow(APIView):
               generation_config = {
                 "temperature": 1,
                 "top_p": 0.95,
-                "top_k": 64,
+                "top_k": 40,
                 "max_output_tokens": 1024,
                 "response_mime_type": "text/plain",
               }
          
               model = genai.GenerativeModel(
-              model_name="gemini-1.5-flash",
+              model_name="gemini-1.5-flash-002",
               system_instruction="Model yourself as a person by using  the information labeled as userprofile. Your personality is labelled as personality, and refere to the summary for more information about your character.Respond to prompt messages keeping the personality mentioned in userprofile.Keep sentences short (less than 60 characters) if the user asks for more set limit to less than 120 characters. Keep conversations simple and human like",
               generation_config=generation_config,
               )
