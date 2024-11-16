@@ -52,7 +52,7 @@ class CreateProfile(APIView):
           else:
               interest = request.data.get("interests","")
               summary= request.data.get("summary","")
-              personality= request.data.get("personailty","")
+              personality= request.data.get("personality","")
               preference= request.data.get("preferences","")
               age= request.data.get("age","")
               gender= request.data.get("gender","")
