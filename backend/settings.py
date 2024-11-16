@@ -31,7 +31,7 @@ SECRET_KEY = 'django-insecure-5&#()zx*&9taofgf_*96!p5_jknyvlo%h=5q8#9msab$0*9%f1
 DEBUG = os.getenv("DEBUG", "False") == "True"
 DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
 env=environ.Env()
-GEMINI_KEY=env("GEMINI_KEY")
+GEMINI_KEY=os.getenv("GEMINI_KEY")
 
 ALLOWED_HOSTS = ["*"]
 
