@@ -113,11 +113,12 @@ class FindMatch(APIView):
             system_instruction="Analyze the user profile labelled as userprofile, you will be given a list of other peoples profiles labelled as candidates_data, from that list pick a person who has the most opposite personality of the userprofile candidate. Output Just their name,age and id with labels name,age and id",
             generation_config=generation_config,
         )
-      print(response.text)
+   
       userprofile=json.dumps(userprofile)
       candidates_data=json.dumps(candidates_data)
       try:
         response = model.generate_content("userprofile is" + userprofile + " candidates_data is" + candidates_data)
+        print(response.text)
       except Exception as e:
         print(f"An error occurred: {e}")
       return HttpResponse(response.text)
