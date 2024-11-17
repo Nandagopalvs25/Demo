@@ -110,7 +110,7 @@ class FindMatch(APIView):
            }
       model = genai.GenerativeModel(
             model_name="gemini-1.5-flash-8b",
-            system_instruction="Analyze the user profile labelled as userprofile, you will be given a list of other peoples profiles labelled as candidates_data, from that list pick a person who has the most opposite personality of the userprofile candidate. Output Just their name,age and id with labels name,age and id",
+            system_instruction="Analyze the user profile labelled as userprofile, you will be given a list of other peoples profiles labelled as candidates_data, from that list pick a person who has the most opposite personality of the userprofile candidate. Output Just their name,age and id with labels name,age and id. PICK ONLY ONE PERSON",
             generation_config=generation_config,
         )
    
